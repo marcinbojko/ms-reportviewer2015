@@ -1,4 +1,16 @@
-# Microsoft Report Viewer 2015 Runtime
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>ms-reportviewer2015</id>
+    <title></title>
+    <version>12.0.2402.15</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <summary>The Microsoft Report Viewer 2015 Runtime redistributable package, includes controls for viewing reports designed using Microsoft reporting technology.</summary>
+    <description>
+    # Microsoft Report Viewer 2015 Runtime
 
 ## Description
 
@@ -70,3 +82,24 @@ or
 ms-reportviewer2015:
   ensure: latest
 ```
+    </description>
+    <projectUrl>https://github.com/marcinbojko/ms-reportviewer2015.git</projectUrl>
+    <packageSourceUrl>https://github.com/marcinbojko/ms-reportviewer2015.git</packageSourceUrl>
+    <docsUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</docsUrl>
+    <!--<projectSourceUrl></projectSourceUrl>
+    <mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</bugTrackerUrl>
+    <tags>microsoft report viewer 2015 runtime</tags>
+    <copyright>Microsoft</copyright>
+    <licenseUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>
+    </releaseNotes>
+    <dependencies>
+      <dependency id="sql2014.smo" />
+    </dependencies>
+  </metadata>
+    <files>
+      <file src="tools\**" target="tools" />
+    </files>
+</package>
