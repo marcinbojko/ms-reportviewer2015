@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>ms-reportviewer2015</id>
-    <title></title>
     <version>12.0.2402.15</version>
+    <title>Microsoft Report Viewer 2015 Runtime </title>
     <authors>Microsoft</authors>
-    <owners>Microsoft</owners>
-    <summary>The Microsoft Report Viewer 2015 Runtime redistributable package, includes controls for viewing reports designed using Microsoft reporting technology.</summary>
-    <description>
-    # Microsoft Report Viewer 2015 Runtime
+    <owners>Marcin Bojko</owners>
+    <licenseUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</licenseUrl>
+    <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description># Microsoft Report Viewer 2015 Runtime
 
 ## Description
 
@@ -45,7 +44,7 @@ Windows 7, Windows 8, Windows 8.1, Windows Server 2003 Service Pack 2, Windows S
 
 ## Changelog
 
-### 2017-03-03 Build 12.0.2402.15
+### 2017-04-15 Build 12.0.2402.15
 
 * initial build
 * version 12.0.2402.15
@@ -55,51 +54,45 @@ Windows 7, Windows 8, Windows 8.1, Windows Server 2003 Service Pack 2, Windows S
 
 ### Direct
 
-```cmd
-choco install ms-reportviewer2015 -source https://www.myget.org/F/public-choco/
 ```
 
-or with added source
-
-```cmd
-choco source add -n=public-choco -s"https://www.myget.org/F/public-choco" --priority=10
 choco install ms-reportviewer2015
+
 ```
 
-### YAML
+### YAML (Foreman)
 
-```yaml
+```
+
 ms-reportviewer2015:
   ensure: latest
   uninstall_options: "--force --all-versions"
   provider: chocolatey
-  source: https://www.myget.org/F/public-choco/
+
 ```
 
 or
 
-```yaml
+```
+
 ms-reportviewer2015:
   ensure: latest
+
 ```
-    </description>
-    <projectUrl>https://github.com/marcinbojko/ms-reportviewer2015.git</projectUrl>
+   </description>
+    <summary>The Microsoft Report Viewer 2015 Runtime redistributable package, includes controls for viewing reports designed using Microsoft reporting technology.</summary>
+    <releaseNotes />
+    <copyright>Microsoft</copyright>
+    <tags>microsoft report viewer 2015 runtime admin</tags>
     <packageSourceUrl>https://github.com/marcinbojko/ms-reportviewer2015.git</packageSourceUrl>
     <docsUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</docsUrl>
-    <!--<projectSourceUrl></projectSourceUrl>
-    <mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</bugTrackerUrl>
-    <tags>microsoft report viewer 2015 runtime</tags>
-    <copyright>Microsoft</copyright>
-    <licenseUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>
-    </releaseNotes>
     <dependencies>
       <dependency id="sql2014.smo" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
   </metadata>
-    <files>
+  <files>
       <file src="tools\**" target="tools" />
     </files>
 </package>

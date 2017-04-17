@@ -8,15 +8,18 @@ $url_local64        = "https://download.microsoft.com/download/A/1/2/A129F694-23
 $url_remote64       = "https://download.microsoft.com/download/A/1/2/A129F694-233C-4C7C-860F-F73139CF2E01/ENU/x86/ReportViewer.msi"
 $url_local_trans    = ""
 $url_remote_trans   = ""
-$url                = ""
-$url64              = ""
-$url_trans          = ""
 $checksum           = "85adfc54e0ede6a847d3cbfd8026330114a78923ef969cd0b4cb99cd28b0fec7"
 $checksum64         = "85adfc54e0ede6a847d3cbfd8026330114a78923ef969cd0b4cb99cd28b0fec7"
 $logfile            = "$env:TEMP\chocolatey\$($packageName)\$($packageName).MsiInstall.log"
 $logdir             = "$env:TEMP\chocolatey\$($packageName)"
+
+# let's zero needed variables
+$url                = ""
+$url64              = ""
+$url_trans          = ""
 $killexec           = 0
 $killexecprocess    = ""
+
 # Let's check if should we use local or remote install source
 $statusCode = Test-Path $url_local
 if ($statusCode) {
@@ -59,23 +62,8 @@ $packageArgs = @{
 # Should we kill some exec ?
 if ($killexec) {
   Stop-Process -processname $killexecprocess -force
-  }
-  Start-Sleep -s 5
-  Install-ChocolateyPackage @packageArgs
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# wait and install package
+Start-Sleep -s 5
+Install-ChocolateyPackage @packageArgs

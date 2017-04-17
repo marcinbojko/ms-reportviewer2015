@@ -33,7 +33,7 @@ Windows 7, Windows 8, Windows 8.1, Windows Server 2003 Service Pack 2, Windows S
 
 ## Changelog
 
-### 2017-03-03 Build 12.0.2402.15
+### 2017-04-15 Build 12.0.2402.15
 
 * initial build
 * version 12.0.2402.15
@@ -44,29 +44,27 @@ Windows 7, Windows 8, Windows 8.1, Windows Server 2003 Service Pack 2, Windows S
 ### Direct
 
 ```cmd
-choco install ms-reportviewer2015 -source https://www.myget.org/F/public-choco/
-```
 
-or with added source
-
-```cmd
-choco source add -n=public-choco -s"https://www.myget.org/F/public-choco" --priority=10
 choco install ms-reportviewer2015
+
 ```
 
-### YAML
+### YAML (Foreman)
 
 ```yaml
+
 ms-reportviewer2015:
   ensure: latest
   uninstall_options: "--force --all-versions"
   provider: chocolatey
-  source: https://www.myget.org/F/public-choco/
+
 ```
 
 or
 
 ```yaml
+
 ms-reportviewer2015:
   ensure: latest
+
 ```
